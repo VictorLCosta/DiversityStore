@@ -1,6 +1,7 @@
 using Api.Application.Common.Interfaces;
 using Api.Domain.Entities.Identity;
 using Api.Infrastructure.Persistence;
+using Api.Infrastructure.Persistence.Repositories;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +29,9 @@ public static class ConfigureServices
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
         services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
+
+        services.AddTransient<IUnitOfWork, UnitOfWork>();
+        services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
 
         return services;
     }
