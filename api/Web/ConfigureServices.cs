@@ -1,6 +1,7 @@
 using System.Text;
 
 using Api.Application.Common.Interfaces;
+using Api.Web.Filters;
 using Api.Web.Services;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -18,7 +19,9 @@ public static class ConfigureServices
 
         services.AddHealthChecks();
 
-        services.AddControllers();
+        services.AddControllers(opt => {
+            opt.Filters.Add<ValidationErrorFilter>();
+        });
         services.AddEndpointsApiExplorer();
 
         services.Configure<ApiBehaviorOptions>(options =>

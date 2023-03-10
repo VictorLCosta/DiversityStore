@@ -26,6 +26,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<SaveChangesMiddleware>();
 
 app.UseRouting();
 
