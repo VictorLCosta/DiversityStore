@@ -22,6 +22,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>, IApplicationDbCo
     public DbSet<Stock> Stocks => Set<Stock>();
     public DbSet<Sale> Sales => Set<Sale>();
     public DbSet<SaleItem> SalesItems => Set<SaleItem>();
+    public DbSet<Customer> Customers => Set<Customer>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
