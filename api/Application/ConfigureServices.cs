@@ -1,6 +1,7 @@
 using System.Reflection;
 
 using Api.Application.Common.Behaviours;
+using Api.Application.Products.Queries.GetProducts;
 
 using MediatR;
 
@@ -15,7 +16,7 @@ public static class ConfigureServices
             cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(PerformanceBehaviour<,>));
         });
-
+        
         return services;
     }
 }
