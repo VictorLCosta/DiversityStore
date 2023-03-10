@@ -1,4 +1,5 @@
 using Api.Infrastructure.Persistence;
+using Api.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,8 @@ if (app.Environment.IsDevelopment())
         await initialiser.SeedAsync();
     }
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseRouting();
 
