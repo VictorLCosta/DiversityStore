@@ -76,6 +76,7 @@ public static class ConfigureServices
         services.AddAuthorization();
 
         services.AddTransient<ITokenService, TokenService>();
+        services.AddTransient<ICurrentUserService, CurrentUserService>();
 
         return services;
     }
