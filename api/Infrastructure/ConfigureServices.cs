@@ -1,5 +1,6 @@
 using Api.Application.Common.Interfaces;
 using Api.Domain.Entities.Identity;
+using Api.Infrastructure.Identity;
 using Api.Infrastructure.Persistence;
 using Api.Infrastructure.Persistence.Repositories;
 
@@ -33,6 +34,8 @@ public static class ConfigureServices
 
         services.AddTransient<IUnitOfWork, UnitOfWork>();
         services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+
+        services.AddTransient<IIdentityService, IdentityService>();
 
         return services;
     }
