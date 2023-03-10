@@ -3,6 +3,7 @@ using Api.Domain.Entities.Identity;
 using Api.Infrastructure.Persistence;
 using Api.Infrastructure.Persistence.Repositories;
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -20,15 +21,15 @@ public static class ConfigureServices
 
         services
             .AddIdentityCore<AppUser>(opt => {
-                opt.Password.RequireUppercase = true;
-                opt.Password.RequiredLength = 12;
-                opt.Password.RequireUppercase = true;
-                opt.Password.RequireDigit = true;
-                opt.Password.RequireNonAlphanumeric = true;
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequireUppercase = false;
             })
+            .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
         services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
+
+        services.AddScoped<ApplicationDbContextInitialiser>();
 
         services.AddTransient<IUnitOfWork, UnitOfWork>();
         services.AddTransient(typeof(IRepository<>), typeof(Repository<>));

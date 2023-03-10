@@ -12,6 +12,7 @@ public class StockConfig : IEntityTypeConfiguration<Stock>
         builder
             .HasOne(x => x.Product)
             .WithOne(x => x.Stock)
-            .HasForeignKey<Stock>(x => x.ProductId);
+            .HasForeignKey<Stock>(x => x.ProductId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

@@ -1,0 +1,26 @@
+[
+    {
+        "Id": "433424d3-ebef-42d9-a32e-93207363148a",
+        "AppUser": {
+            "UserName": "user1@example.com", 
+            "Email": "user1@example.com", 
+            "DisplayName": "User 1"
+        }
+    },
+    {
+        "Id": "1a1a395b-74a2-48d2-8f43-c0bf809c8e4e",
+        "AppUser": {
+            "UserName": "user2@example.com", 
+            "Email": "user2@example.com", 
+            "DisplayName": "User 2"
+        }
+    },
+    {
+        "Id": "1ba0398b-0330-4f89-a226-8b4f889f08e4",
+        "AppUser": {
+            "UserName": "user3@example.com", 
+            "Email": "user3@example.com", 
+            "DisplayName": "User 3"
+        }
+    }
+]

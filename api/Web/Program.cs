@@ -1,3 +1,5 @@
+using Api.Infrastructure.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplicationServices();
@@ -13,6 +15,13 @@ if (app.Environment.IsDevelopment())
         opt.SwaggerEndpoint("/swagger/v1/swagger.json", "Api v1");
         opt.RoutePrefix = String.Empty;
     });
+
+    using (var scope = app.Services.CreateScope())
+    {
+        var initialiser = scope.ServiceProvider.GetRequiredService<ApplicationDbContextInitialiser>();
+        await initialiser.InitialiseAsync();
+        await initialiser.SeedAsync();
+    }
 }
 
 app.UseRouting();
