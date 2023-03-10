@@ -18,9 +18,10 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>, IApplicationDbCo
             
     }
 
-    public DbSet<Product> Products => throw new NotImplementedException();
-    public DbSet<Sale> Sales => throw new NotImplementedException();
-    public DbSet<SaleItem> SalesItems => throw new NotImplementedException();
+    public DbSet<Product> Products => Set<Product>();
+    public DbSet<Stock> Stocks => Set<Stock>();
+    public DbSet<Sale> Sales => Set<Sale>();
+    public DbSet<SaleItem> SalesItems => Set<SaleItem>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
