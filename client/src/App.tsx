@@ -1,5 +1,7 @@
+import AppProvider from "./providers/AppProvider";
+
 function App() {
-  return <div>asdasdadadadasad</div>;
+  return <AppProvider>asdasdsadasd</AppProvider>;
 }
 
 export default App;

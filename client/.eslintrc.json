@@ -12,6 +12,20 @@
         "plugin:prettier/recommended"
     ],
     "overrides": [
+        {
+            "files": [
+                "**/*.ts?(x)"
+            ],
+            "rules": {
+                "import/extensions": [
+                    "error",
+                    "never",
+                    {
+                        "ignorePackages": true
+                    }
+                ]
+            }
+        }
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
