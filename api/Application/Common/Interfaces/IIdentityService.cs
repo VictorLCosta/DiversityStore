@@ -5,12 +5,12 @@ namespace Api.Application.Common.Interfaces;
 
 public interface IIdentityService
 {
-    Task<AppUser?> GetUserAsync(string email);
-    Task<AppUser?> GetUserByIdAsync(string id);
+    Task<AppUser?> GetUserAsync(string? email);
+    Task<AppUser?> GetUserByIdAsync(string? id);
 
     Task<string?> GetUserNameAsync(string userId);
 
-    Task<bool> CheckPasswordAsync(AppUser user, string password);
+    Task<bool> CheckPasswordAsync(AppUser user, string? password);
 
     Task<bool> IsInRoleAsync(string userId, string role);
 

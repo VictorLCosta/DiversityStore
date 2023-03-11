@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Web.Controllers;
 
+[Authorize(Roles = "Administrator, Customer")]
 public class ProductsController : BaseApiController
 {
     [HttpGet]
@@ -18,6 +19,7 @@ public class ProductsController : BaseApiController
     }
 
     [HttpPost]
+    [Authorize(Roles = "Administrator")]
     public async Task<IActionResult> Create(CreateProductDto createProductDto)
     {
         var result = await Mediator.Send(new CreateProductCommand.Command { CreateProductDto = createProductDto });
@@ -26,6 +28,7 @@ public class ProductsController : BaseApiController
     }
 
     [HttpDelete("{productId}")]
+    [Authorize(Roles = "Administrator")]
     public async Task<IActionResult> Delete(Guid productId)
     {
         var result = await Mediator.Send(new DeleteProductCommand.Command { ProductId = productId });

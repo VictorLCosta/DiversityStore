@@ -39,14 +39,14 @@ public class IdentityService : IIdentityService
         return (result.ToApplicationResult(), user.Id);
     }
 
-    public async Task<AppUser?> GetUserAsync(string email)
+    public async Task<AppUser?> GetUserAsync(string? email)
     {
         var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Email == email || x.UserName == email);
 
         return user;
     }
 
-    public async Task<AppUser?> GetUserByIdAsync(string id)
+    public async Task<AppUser?> GetUserByIdAsync(string? id)
     {
         var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Id == id);
 
@@ -81,8 +81,8 @@ public class IdentityService : IIdentityService
         return result.ToApplicationResult();
     }
 
-    public async Task<bool> CheckPasswordAsync(AppUser user, string password)
+    public async Task<bool> CheckPasswordAsync(AppUser user, string? password)
     {
-        return await _userManager.CheckPasswordAsync(user, password);
+        return await _userManager.CheckPasswordAsync(user, password!);
     }
 }

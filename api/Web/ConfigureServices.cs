@@ -29,21 +29,27 @@ public static class ConfigureServices
 
         services.AddSwaggerGen(opt =>
         {
-            opt.SwaggerDoc("v1", new OpenApiInfo { Title = "Api", Version = "v1" });
+            opt.SwaggerDoc("v1", new OpenApiInfo { 
+                Title = "DiversityStore Api", 
+                Version = "v1",
+                Description = "API built in ASP.NET Core for managing a diversity store" 
+            });
 
             opt.AddSecurityDefinition("JWT", new OpenApiSecurityScheme
             {
-                Type = SecuritySchemeType.ApiKey,
+                Type = SecuritySchemeType.Http,
                 BearerFormat = "JWT",
                 Name = "Authorization",
-                Scheme = "bearer",
+                Scheme = "Bearer",
                 In = ParameterLocation.Header,
                 Description = "Type into the textbox: Bearer {your JWT token}."
             });
 
-            opt.AddSecurityRequirement(new OpenApiSecurityRequirement {
+            opt.AddSecurityRequirement(new OpenApiSecurityRequirement 
+            {
                     {
-                        new OpenApiSecurityScheme {
+                        new OpenApiSecurityScheme 
+                        {
                             Reference = new OpenApiReference
                             {
                                 Type = ReferenceType.SecurityScheme,
@@ -52,7 +58,7 @@ public static class ConfigureServices
                         },
                         new string[] {}
                     }
-                });
+            });
         });
 
         var key = Encoding.UTF8.GetBytes(config["Jwt:Key"]!);
