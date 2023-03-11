@@ -1,9 +1,5 @@
 function App() {
-  return (
-    <div>
-      asdasdadadadasad
-    </div>
-  )
+  return <div>asdasdadadadasad</div>;
 }
 
-export default App
+export default App;
