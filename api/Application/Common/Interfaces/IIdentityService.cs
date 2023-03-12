@@ -12,6 +12,7 @@ public interface IIdentityService
 
     Task<bool> CheckPasswordAsync(AppUser user, string? password);
 
+    Task<string?> GetUserRoleAsync(AppUser user);
     Task<bool> IsInRoleAsync(string userId, string role);
 
     Task<bool> AuthorizeAsync(string userId, string policyName);

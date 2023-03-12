@@ -72,7 +72,7 @@ public class ApplicationDbContextInitialiser
                     await _userManager.CreateAsync(item.AppUser, "sistema123");
                     if (!string.IsNullOrWhiteSpace(customerRole.Name))
                     {
-                        await _userManager.AddToRolesAsync(administrator, new [] { customerRole.Name });
+                        await _userManager.AddToRolesAsync(item.AppUser, new [] { customerRole.Name });
                     }
 
                     await _context.Customers.AddAsync(item);

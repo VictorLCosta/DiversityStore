@@ -4,5 +4,5 @@ namespace Api.Application.Common.Interfaces;
 
 public interface ITokenService
 {
-    string GenerateJwtToken(AppUser user);
+    string GenerateJwtToken(AppUser user, string? role);
 }

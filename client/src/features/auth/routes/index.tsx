@@ -5,7 +5,7 @@ import { Login } from "./Login";
 export function AuthRoutes() {
   return (
     <Routes>
-      <Route path="" element={<Login />} />
+      <Route path="login" element={<Login />} />
     </Routes>
   );
 }

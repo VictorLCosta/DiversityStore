@@ -54,7 +54,9 @@ public class AuthController : ControllerBase
 
         if (result)
         {
-            var token = _tokenService.GenerateJwtToken(user);
+            var role = await _identityService.GetUserRoleAsync(user);
+
+            var token = _tokenService.GenerateJwtToken(user, role);
 
             return Ok(new UserResponseDto
             {

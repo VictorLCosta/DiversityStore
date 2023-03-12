@@ -48,9 +48,9 @@ public static class ConfigureServices
                 Description = "API built in ASP.NET Core for managing a diversity store"
             });
 
-            opt.AddSecurityDefinition("JWT", new OpenApiSecurityScheme
+            opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
-                Type = SecuritySchemeType.Http,
+                Type = SecuritySchemeType.ApiKey,
                 BearerFormat = "JWT",
                 Name = "Authorization",
                 Scheme = "Bearer",
