@@ -1,8 +1,14 @@
 import { createContext, useContext } from "react";
 
-interface Store {}
+import { AuthStore } from "@/features/auth";
 
-export const store: Store = {};
+interface Store {
+  authStore: AuthStore;
+}
+
+export const store: Store = {
+  authStore: new AuthStore(),
+};
 
 export const StoreContext = createContext(store);
 
