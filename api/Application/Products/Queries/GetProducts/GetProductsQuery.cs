@@ -37,7 +37,7 @@ public class GetProductsQuery
         {
             var products = await _uow
                 .ProductRepository
-                .AsQueryable(x => x.Stock.QuantityInStock > 0)
+                .AsQueryable(x => x.Status == 0)
                 .ProjectTo<ProductBriefDto>(_mapper.ConfigurationProvider)
                 .PaginatedListAsync(request.PageNumber, request.PageSize);
 

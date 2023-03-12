@@ -3,9 +3,9 @@ using Api.Domain.Entities;
 
 using AutoMapper;
 
-namespace Api.Application.Products.Commands.CreateProduct;
+namespace Api.Application.Products.Commands.UpdateProduct;
 
-public class CreateProductResultDto : IMapFrom<Product>
+public class UpdateProductResultDto : IMapFrom<Product>
 {
     public Guid Id { get; set; }
     public string? Name { get; init; }
@@ -18,7 +18,7 @@ public class CreateProductResultDto : IMapFrom<Product>
     public void Mapping(Profile profile)
     {
         profile
-            .CreateMap<Product, CreateProductResultDto>()
+            .CreateMap<Product, UpdateProductResultDto>()
             .ForMember(x => x.QuantityOnStock, opt => opt.MapFrom(src => src.Stock.QuantityInStock))
             .ReverseMap();
     }

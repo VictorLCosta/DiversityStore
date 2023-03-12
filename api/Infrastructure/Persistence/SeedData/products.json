@@ -6,6 +6,7 @@
         "Description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
         "PictureUrl": "http://dummyimage.com/600x400.png/5fa2dd/ffffff",
         "Price": 309.40,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 5
         }
@@ -17,6 +18,7 @@
         "Description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "Price": 250.40,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 10
         }
@@ -28,6 +30,7 @@
         "Description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "Price": 140.49,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 2
         }
@@ -39,6 +42,7 @@
         "Description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "Price": 129.00,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 1
         }
@@ -50,6 +54,7 @@
         "Description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "Price": 67.90,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 1
         }
@@ -61,6 +66,7 @@
         "Description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
         "PictureUrl": "http://dummyimage.com/600x400.png/5fa2dd/ffffff",
         "Price": 749.99,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 3
         }
@@ -72,6 +78,7 @@
         "Description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
         "PictureUrl": "http://dummyimage.com/600x400.png/dddddd/000000",
         "Price": 659.99,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 6
         }
@@ -83,6 +90,7 @@
         "Description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "Price": 624.00,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 11
         }
@@ -94,6 +102,7 @@
         "Description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
         "PictureUrl": "http://dummyimage.com/600x400.png/5fa2dd/ffffff",
         "Price": 46.00,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 2
         }
@@ -105,6 +114,7 @@
         "Description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
         "PictureUrl": "http://dummyimage.com/600x400.png/dddddd/000000",
         "Price": 159.89,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 20
         }
@@ -116,6 +126,7 @@
         "Description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "Price": 53.95,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 3
         }
@@ -127,6 +138,7 @@
         "Description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
         "PictureUrl": "http://dummyimage.com/600x400.png/5fa2dd/ffffff",
         "Price": 23.95,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 7
         }
@@ -138,6 +150,7 @@
         "Description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "Price": 72.99,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 4
         }
@@ -149,6 +162,7 @@
         "Description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "Price": 54.90,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 30
         }
@@ -160,6 +174,7 @@
         "Description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "Price": 229.99,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 5
         }
@@ -171,6 +186,7 @@
         "Description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "Price": 37.90,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 20
         }
@@ -182,6 +198,7 @@
         "Description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "Price": 99.00,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 12
         }
@@ -193,6 +210,7 @@
         "Description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "Price": 250.00,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 14
         }
@@ -204,6 +222,7 @@
         "Description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
         "PictureUrl": "http://dummyimage.com/600x400.png/cc0000/ffffff",
         "Price": 69.99,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 8
         }
@@ -215,6 +234,7 @@
         "Description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
         "PictureUrl": "http://dummyimage.com/600x400.png/ff4444/ffffff",
         "Price": 300.00,
+        "Status": 0,
         "Stock": {
             "QuantityInStock": 10
         }

@@ -15,5 +15,9 @@ public class ProductConfig : IEntityTypeConfiguration<Product>
 
         builder
             .HasIndex(x => x.Slug);
+
+        builder
+            .Property(x => x.Status)
+            .HasConversion<string>();
     }
 }
