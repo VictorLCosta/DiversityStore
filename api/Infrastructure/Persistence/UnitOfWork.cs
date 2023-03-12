@@ -16,6 +16,9 @@ public class UnitOfWork : IUnitOfWork
     #region Repositories
 
     public IProductRepository ProductRepository => new ProductRepository(_context);
+    public ISaleRepository SaleRepository => new SaleRepository(_context);
+    public IStockRepository StockRepository => new StockRepository(_context);
+    public ICustomerRepository CustomerRepository => new CustomerRepository(_context);
 
     #endregion
 
