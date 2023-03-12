@@ -30,6 +30,8 @@ app.UseMiddleware<SaveChangesMiddleware>();
 
 app.UseRouting();
 
+app.UseCors();
+
 app.UseHealthChecks("/health");
 app.UseHttpsRedirection();
 

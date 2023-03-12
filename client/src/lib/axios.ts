@@ -16,7 +16,7 @@ function authRequestInterceptor(config: InternalAxiosRequestConfig) {
 }
 
 export const axios = Axios.create({
-  baseURL: "https://localhost:5001/api",
+  baseURL: "http://localhost:5154/api",
   headers: {
     "Content-type": "application/json",
   },

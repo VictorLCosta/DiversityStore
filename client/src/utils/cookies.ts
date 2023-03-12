@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-const storagePrefix = "ecommerce_aware_";
+const storagePrefix = "ds_";
 
 const cookies = {
   get: (key: string) => Cookies.get(`${storagePrefix}${key}`),

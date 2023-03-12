@@ -19,7 +19,8 @@ public static class ConfigureServices
 
         services.AddHealthChecks();
 
-        services.AddControllers(opt => {
+        services.AddControllers(opt =>
+        {
             opt.Filters.Add<ValidationErrorFilter>();
         });
         services.AddEndpointsApiExplorer();
@@ -27,12 +28,24 @@ public static class ConfigureServices
         services.Configure<ApiBehaviorOptions>(options =>
             options.SuppressModelStateInvalidFilter = true);
 
+        services.AddCors(opt =>
+                opt.AddDefaultPolicy(policy =>
+                {
+                    policy
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .WithOrigins("http://localhost:5173");
+                })
+        );
+
         services.AddSwaggerGen(opt =>
         {
-            opt.SwaggerDoc("v1", new OpenApiInfo { 
-                Title = "DiversityStore Api", 
+            opt.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "DiversityStore Api",
                 Version = "v1",
-                Description = "API built in ASP.NET Core for managing a diversity store" 
+                Description = "API built in ASP.NET Core for managing a diversity store"
             });
 
             opt.AddSecurityDefinition("JWT", new OpenApiSecurityScheme
@@ -45,10 +58,10 @@ public static class ConfigureServices
                 Description = "Type into the textbox: Bearer {your JWT token}."
             });
 
-            opt.AddSecurityRequirement(new OpenApiSecurityRequirement 
+            opt.AddSecurityRequirement(new OpenApiSecurityRequirement
             {
                     {
-                        new OpenApiSecurityScheme 
+                        new OpenApiSecurityScheme
                         {
                             Reference = new OpenApiReference
                             {
