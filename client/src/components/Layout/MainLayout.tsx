@@ -1,3 +1,5 @@
+import { Box } from "@chakra-ui/react";
+
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
@@ -9,7 +11,9 @@ export function MainLayout({ children }: MainLayoutProps) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <Box as="main" py={6} px={4}>
+        {children}
+      </Box>
       <Footer />
     </>
   );

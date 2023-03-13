@@ -1,20 +1,27 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import { observer } from "mobx-react-lite";
-import { useRoutes } from "react-router-dom";
+import { useEffect } from "react";
 
 import { useStore } from "@/stores";
+import { lazyImport } from "@/utils/lazyImport";
 
-import { protectedRoutes } from "./protected";
-import { publicRoutes } from "./public";
+import { ProtectedRoutes } from "./protected";
+
+const { AuthRoutes } = lazyImport(
+  () => import("@/features/auth"),
+  "AuthRoutes",
+);
 
 export const AppRoutes = observer(() => {
   const {
-    authStore: { isLoggedIn },
+    authStore: { isLoggedIn, token, getCurrentUser },
   } = useStore();
 
-  const routes = isLoggedIn ? protectedRoutes : publicRoutes;
+  useEffect(() => {
+    if (token) {
+      getCurrentUser().finally();
+    }
+  }, [getCurrentUser, token]);
 
-  const element = useRoutes([...routes]);
-
-  return <>{element}</>;
+  return <>{isLoggedIn ? <ProtectedRoutes /> : <AuthRoutes />}</>;
 });

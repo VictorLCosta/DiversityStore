@@ -19,7 +19,7 @@ export function Login() {
         justifyContent="center"
         bgGradient="linear(to-r, #1A2980, #26D0CE)"
       >
-        <LoginForm onSuccess={() => navigate("/app/products")} />
+        <LoginForm onSuccess={() => navigate("/products")} />
         <Box textColor="white">
           <Text align="center">
             Para acessar como Administrador - Email: admin@example.com Password:
