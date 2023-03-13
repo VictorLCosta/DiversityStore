@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 using Api.Application.Common.Extensions;
 using Api.Application.Common.Mappings;
 using Api.Domain.Entities;
@@ -9,11 +11,20 @@ namespace Api.Application.Products.Commands.UpdateProduct;
 public class UpdateProductDto : IMapFrom<Product>
 {
     public Guid Id { get; set; }
+
+    [Required]
+    [MaxLength(250)]
     public string? Name { get; init; }
+
+    [Required]
     public string? Description { get; init; }
+    
     public string? PictureUrl { get; set; }
+
+    [Range(1, int.MaxValue)]
     public decimal Price { get; init; }
 
+    [Range(1, int.MaxValue)]
     public int QuantityOnStock { get; set; }
 
     public void Mapping(Profile profile)

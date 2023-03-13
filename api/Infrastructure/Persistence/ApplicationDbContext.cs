@@ -4,6 +4,7 @@ using Api.Application.Common.Interfaces;
 using Api.Domain.Common;
 using Api.Domain.Entities;
 using Api.Domain.Entities.Identity;
+using Api.Domain.Enum;
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -13,9 +14,9 @@ namespace Api.Infrastructure.Persistence;
 
 public class ApplicationDbContext : IdentityDbContext<AppUser>, IApplicationDbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+    public ApplicationDbContext(
+        DbContextOptions<ApplicationDbContext> options) : base(options)
     {
-            
     }
 
     public DbSet<Product> Products => Set<Product>();
@@ -57,5 +58,31 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>, IApplicationDbCo
                 }
             }
         }
+    }
+
+    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+         var entries = ChangeTracker
+            .Entries<Stock>()
+            .Where(e => e.State == EntityState.Added || (e.State == EntityState.Modified && e.Property(x => x.QuantityInStock).IsModified));
+
+        foreach (var entry in entries)
+        {
+            var product = Products.FirstOrDefault(p => p.Id == entry.Entity.ProductId);
+
+            if (product != null)
+            {
+                if (entry.Entity.QuantityInStock > 0)
+                {
+                    product.Status = ProductStatus.Available;
+                }
+                else
+                {
+                    product.Status = ProductStatus.OutOfStock;
+                }
+            }
+        }
+
+        return await base.SaveChangesAsync();
     }
 }
