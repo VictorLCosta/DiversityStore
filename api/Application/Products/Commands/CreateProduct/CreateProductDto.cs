@@ -19,10 +19,10 @@ public class CreateProductDto : IMapFrom<Product>
 
     public string? PictureUrl { get; set; }
 
-    [Range(1, int.MaxValue)]
+    [Range(1.0, double.MaxValue)]
     public decimal Price { get; init; }
 
-    [Range(1, int.MaxValue)]
+    [Range(1.0, double.MaxValue)]
     public int InitialQuantityOnStock { get; set; }
 
     public void Mapping(Profile profile)

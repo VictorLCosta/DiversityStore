@@ -48,6 +48,12 @@ public class CreateSaleCommand
                     Quantity = item.Quantity,
                     Price = totalItemPrice,
                 });
+
+                var stock = await _unitOfWork.StockRepository.GetByProductIdAsync(item.ProductId);
+
+                stock.QuantityInStock -= item.Quantity;
+
+                await _unitOfWork.StockRepository.UpdateAsync(stock);
             }
 
             var saleTotalAmount = saleItems.Sum(x => x.Price);
