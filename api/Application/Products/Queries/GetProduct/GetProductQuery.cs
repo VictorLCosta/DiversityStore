@@ -33,6 +33,7 @@ public class GetProductQuery
             var product = await _uow
                 .ProductRepository
                 .AsQueryable(x => x.Slug == request.Slug && x.Status == 0)
+                .Include(x => x.Stock)
                 .ProjectTo<ProductDto>(_mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync();
 

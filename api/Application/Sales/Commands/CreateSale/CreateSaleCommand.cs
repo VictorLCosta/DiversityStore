@@ -54,6 +54,8 @@ public class CreateSaleCommand
                 stock.QuantityInStock -= item.Quantity;
 
                 await _unitOfWork.StockRepository.UpdateAsync(stock);
+
+                await _unitOfWork.Complete();
             }
 
             var saleTotalAmount = saleItems.Sum(x => x.Price);

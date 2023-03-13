@@ -5,7 +5,8 @@ export type ProductDto = {
   slug: string;
   description: string;
   pictureUrl: string;
-  defaultPrice: number;
+  price: number;
+  quantityInStock: number;
 } & BaseEntity;
 
 export type ProductBriefDto = {
@@ -14,3 +15,8 @@ export type ProductBriefDto = {
   pictureUrl: string;
   price: number;
 } & BaseEntity;
+
+export type SaleItemDto = {
+  productId: string;
+  quantity: number;
+};

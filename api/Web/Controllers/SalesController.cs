@@ -9,7 +9,6 @@ namespace Api.Web.Controllers;
 public class SalesController : BaseApiController
 {
     [HttpPost("create")]
-    [Authorize(Roles = "Customer")]
     public async Task<IActionResult> CreateSale(List<SaleItemDto> items)
     {
         var result = await Mediator.Send(new CreateSaleCommand.Command { SaleItems = items});
