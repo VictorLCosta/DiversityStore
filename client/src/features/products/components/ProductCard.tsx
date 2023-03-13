@@ -9,6 +9,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 import type { ProductBriefDto } from "../types";
 
@@ -32,7 +33,12 @@ export function ProductCard({ product }: ProductCardProps) {
       </CardBody>
       <Divider borderColor="gray.400" />
       <CardFooter>
-        <Button variant="solid" colorScheme="blue">
+        <Button
+          as={Link}
+          to={`/products/${product.slug}`}
+          variant="solid"
+          colorScheme="blue"
+        >
           Buy now
         </Button>
       </CardFooter>

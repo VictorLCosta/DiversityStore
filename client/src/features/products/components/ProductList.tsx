@@ -1,4 +1,4 @@
-import { Grid, GridItem, Spinner } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Spinner } from "@chakra-ui/react";
 
 import { InfiniteScroll } from "@/components/InfiniteScroll";
 
@@ -8,9 +8,9 @@ import { ProductCard } from "./ProductCard";
 
 function LoadingComponent() {
   return (
-    <div className="h-full w-full flex items-center justify-center col-span-1 sm:col-span-4">
+    <Flex width="full" height="full" justifyItems="center" justify="center">
       <Spinner size="xl" />
-    </div>
+    </Flex>
   );
 }
 
