@@ -20,3 +20,12 @@ export type SaleItemDto = {
   productId: string;
   quantity: number;
 };
+
+export type DashboardEntryDto = {
+  id: string;
+  name: string;
+  slug: string;
+  price: number;
+  quantityInStock: number;
+  status: number;
+};

@@ -41,73 +41,80 @@ export function LoginForm({ onSuccess }: LoginFormProps) {
       animate={{ opacity: 1, scale: 1 }}
     >
       <Formik
-        initialValues={{ email: "admin@example.com", password: "sistema123" }}
+        initialValues={{ email: "", password: "" }}
         validationSchema={schema}
+        enableReinitialize
         onSubmit={async (values) => {
           await login({ email: values.email, password: values.password });
           onSuccess();
         }}
       >
-        {({ errors, dirty, isSubmitting }) => (
-          <Box
-            as={Form}
-            backgroundColor="white"
-            width="sm"
-            padding="7"
-            borderRadius="lg"
-            autoComplete="off"
-          >
-            <Center p={4}>
-              <Heading as="h2" size="lg" mb={2}>
-                Login
-              </Heading>
-            </Center>
-            <FormControl mb={3}>
-              <FormLabel>Email</FormLabel>
-              <InputGroup>
-                <InputLeftElement fontSize="1.4rem" pointerEvents="none">
-                  <Icon as={MdOutlinePersonOutline} color="gray.300" />
-                </InputLeftElement>
-                <Input
-                  name="email"
-                  placeholder="Type your email"
-                  variant="flushed"
-                />
-              </InputGroup>
-              {errors.email && (
-                <FormErrorMessage>{errors.email}</FormErrorMessage>
-              )}
-            </FormControl>
-            <FormControl>
-              <FormLabel>Password</FormLabel>
-              <InputGroup>
-                <InputLeftElement fontSize="1.4rem" pointerEvents="none">
-                  <Icon as={MdOutlineLock} color="gray.300" />
-                </InputLeftElement>
-                <Input
-                  name="password"
-                  type="password"
-                  placeholder="Type your password"
-                  variant="flushed"
-                />
-              </InputGroup>
-              {errors.password && (
-                <FormErrorMessage>{errors.password}</FormErrorMessage>
-              )}
-            </FormControl>
-            <Button
-              type="submit"
-              mt={14}
-              width="full"
-              textColor="white"
-              textTransform="uppercase"
-              borderRadius="3xl"
-              bgGradient="linear(to-r, #1A2980, #26D0CE)"
-              isLoading={isSubmitting}
-              _disabled={{ opacity: 0.75, pointerEvents: "none" }}
-            >
-              login
-            </Button>
+        {({
+          dirty,
+          errors,
+          values,
+          isSubmitting,
+          isValid,
+          handleChange,
+          handleSubmit,
+        }) => (
+          <Box backgroundColor="white" width="sm" padding="7" borderRadius="lg">
+            <Form onSubmit={handleSubmit} autoComplete="off">
+              <Center p={4}>
+                <Heading as="h2" size="lg" mb={2}>
+                  Login
+                </Heading>
+              </Center>
+              <FormControl mb={3}>
+                <FormLabel>Email</FormLabel>
+                <InputGroup>
+                  <InputLeftElement fontSize="1.4rem" pointerEvents="none">
+                    <Icon as={MdOutlinePersonOutline} color="gray.300" />
+                  </InputLeftElement>
+                  <Input
+                    name="email"
+                    value={values.email}
+                    onChange={handleChange}
+                    variant="flushed"
+                  />
+                </InputGroup>
+                {errors.email && (
+                  <FormErrorMessage>{errors.email}</FormErrorMessage>
+                )}
+              </FormControl>
+              <FormControl mb={3}>
+                <FormLabel>Password</FormLabel>
+                <InputGroup>
+                  <InputLeftElement fontSize="1.4rem" pointerEvents="none">
+                    <Icon as={MdOutlineLock} color="gray.300" />
+                  </InputLeftElement>
+                  <Input
+                    name="password"
+                    type="password"
+                    value={values.password}
+                    onChange={handleChange}
+                    variant="flushed"
+                  />
+                </InputGroup>
+                {errors.password && (
+                  <FormErrorMessage>{errors.password}</FormErrorMessage>
+                )}
+              </FormControl>
+              <Button
+                type="submit"
+                mt={14}
+                width="full"
+                textColor="white"
+                textTransform="uppercase"
+                borderRadius="3xl"
+                bgGradient="linear(to-r, #1A2980, #26D0CE)"
+                isLoading={isSubmitting}
+                isDisabled={!isValid || !dirty}
+                _disabled={{ opacity: 0.75, pointerEvents: "none" }}
+              >
+                login
+              </Button>
+            </Form>
           </Box>
         )}
       </Formik>

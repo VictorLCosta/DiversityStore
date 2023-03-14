@@ -25,6 +25,8 @@ import {
 import { createRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { Head } from "@/components/Head";
+
 import { createSale } from "../api/createSale";
 import { useProduct } from "../api/getProduct";
 
@@ -58,6 +60,7 @@ export function Product() {
 
   return (
     <>
+      <Head title={data.name} />
       <Grid templateColumns="repeat(2, 1fr)">
         <GridItem>
           <Image src={data.pictureUrl} />

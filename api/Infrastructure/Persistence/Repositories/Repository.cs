@@ -25,7 +25,7 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
     public async Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate)
         => await _context.Set<T>().Where(predicate).ToListAsync();
 
-    public IQueryable<T> AsQueryable(Expression<Func<T, bool>>? predicate)
+    public IQueryable<T> AsQueryable(Expression<Func<T, bool>>? predicate = null)
         => predicate == null ? _context.Set<T>().AsQueryable() : _context.Set<T>().Where(predicate).AsQueryable();
 
     public async Task<T> AddAsync(T entity)

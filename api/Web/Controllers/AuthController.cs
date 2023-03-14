@@ -36,7 +36,8 @@ public class AuthController : ControllerBase
             Id = user.Id,
             Email = user.Email,
             DisplayName = user.DisplayName,
-            UserName = user.UserName
+            UserName = user.UserName,
+            Role = await _identityService.GetUserRoleAsync(user)
         });
 
         return NotFound("User not found");

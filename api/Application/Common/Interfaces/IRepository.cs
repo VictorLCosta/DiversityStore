@@ -9,7 +9,7 @@ public interface IRepository<T>
     Task<IEnumerable<T>> GetAll();
     Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate);
 
-    IQueryable<T> AsQueryable(Expression<Func<T, bool>>? predicate);
+    IQueryable<T> AsQueryable(Expression<Func<T, bool>>? predicate = null);
 
     Task<T> AddAsync(T entity);
         

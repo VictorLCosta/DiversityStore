@@ -1,6 +1,7 @@
 using Api.Application.Products.Commands.CreateProduct;
 using Api.Application.Products.Commands.DeleteProduct;
 using Api.Application.Products.Commands.UpdateProduct;
+using Api.Application.Products.Queries.GetDashboardEntries;
 using Api.Application.Products.Queries.GetProduct;
 using Api.Application.Products.Queries.GetProducts;
 
@@ -51,6 +52,15 @@ public class ProductsController : BaseApiController
     public async Task<IActionResult> Delete(Guid productId)
     {
         var result = await Mediator.Send(new DeleteProductCommand.Command { ProductId = productId });
+
+        return HandleResult(result);
+    }
+
+    [HttpGet("dashboard")]
+    [Authorize(Roles = "Administrator")]
+    public async Task<IActionResult> GetDashboard([FromQuery] GetDashboardEntriesQuery.Query query)
+    {
+        var result = await Mediator.Send(query);
 
         return HandleResult(result);
     }

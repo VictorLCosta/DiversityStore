@@ -5,8 +5,8 @@ import React from "react";
 import { useStore } from "@/stores";
 
 export enum ROLES {
-  ADMIN = "ADMIN",
-  CUSTOMER = "CUSTOMER",
+  Administrator = "Administrator",
+  Customer = "Customer",
 }
 
 type RoleTypes = keyof typeof ROLES;

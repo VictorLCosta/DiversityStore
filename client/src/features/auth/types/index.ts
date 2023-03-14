@@ -4,7 +4,7 @@ export type AuthUser = {
   displayName: string;
   userName: string;
   pictureUrl: string;
-  role: "ADMIN" | "CUSTOMER";
+  role: "Administrator" | "Customer";
 };
 
 export type UserResponse = {
